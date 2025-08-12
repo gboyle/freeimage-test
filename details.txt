@@ -1,0 +1,1232 @@
+Script started on 2025-08-12 10:18:26-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="209" LINES="24"]
+
+repro@vm:~/code/freeimage-test$ cd
+
+repro@vm:~$ git clone --branch 2025.07.25 https://github.com/microsoft/vcpkg.git
+
+Cloning into 'vcpkg'...
+remote: Enumerating objects: 282920, done.
+remote: Counting objects:   0% (1/133)
+remote: Counting objects:   1% (2/133)
+remote: Counting objects:   2% (3/133)
+remote: Counting objects:   3% (4/133)
+remote: Counting objects:   4% (6/133)
+remote: Counting objects:   5% (7/133)
+remote: Counting objects:   6% (8/133)
+remote: Counting objects:   7% (10/133)
+remote: Counting objects:   8% (11/133)
+remote: Counting objects:   9% (12/133)
+remote: Counting objects:  10% (14/133)
+remote: Counting objects:  11% (15/133)
+remote: Counting objects:  12% (16/133)
+remote: Counting objects:  13% (18/133)
+remote: Counting objects:  14% (19/133)
+remote: Counting objects:  15% (20/133)
+remote: Counting objects:  16% (22/133)
+remote: Counting objects:  17% (23/133)
+remote: Counting objects:  18% (24/133)
+remote: Counting objects:  19% (26/133)
+remote: Counting objects:  20% (27/133)
+remote: Counting objects:  21% (28/133)
+remote: Counting objects:  22% (30/133)
+remote: Counting objects:  23% (31/133)
+remote: Counting objects:  24% (32/133)
+remote: Counting objects:  25% (34/133)
+remote: Counting objects:  26% (35/133)
+remote: Counting objects:  27% (36/133)
+remote: Counting objects:  28% (38/133)
+remote: Counting objects:  29% (39/133)
+remote: Counting objects:  30% (40/133)
+remote: Counting objects:  31% (42/133)
+remote: Counting objects:  32% (43/133)
+remote: Counting objects:  33% (44/133)
+remote: Counting objects:  34% (46/133)
+remote: Counting objects:  35% (47/133)
+remote: Counting objects:  36% (48/133)
+remote: Counting objects:  37% (50/133)
+remote: Counting objects:  38% (51/133)
+remote: Counting objects:  39% (52/133)
+remote: Counting objects:  40% (54/133)
+remote: Counting objects:  41% (55/133)
+remote: Counting objects:  42% (56/133)
+remote: Counting objects:  43% (58/133)
+remote: Counting objects:  44% (59/133)
+remote: Counting objects:  45% (60/133)
+remote: Counting objects:  46% (62/133)
+remote: Counting objects:  47% (63/133)
+remote: Counting objects:  48% (64/133)
+remote: Counting objects:  49% (66/133)
+remote: Counting objects:  50% (67/133)
+remote: Counting objects:  51% (68/133)
+remote: Counting objects:  52% (70/133)
+remote: Counting objects:  53% (71/133)
+remote: Counting objects:  54% (72/133)
+remote: Counting objects:  55% (74/133)
+remote: Counting objects:  56% (75/133)
+remote: Counting objects:  57% (76/133)
+remote: Counting objects:  58% (78/133)
+remote: Counting objects:  59% (79/133)
+remote: Counting objects:  60% (80/133)
+remote: Counting objects:  61% (82/133)
+remote: Counting objects:  62% (83/133)
+remote: Counting objects:  63% (84/133)
+remote: Counting objects:  64% (86/133)
+remote: Counting objects:  65% (87/133)
+remote: Counting objects:  66% (88/133)
+remote: Counting objects:  67% (90/133)
+remote: Counting objects:  68% (91/133)
+remote: Counting objects:  69% (92/133)
+remote: Counting objects:  70% (94/133)
+remote: Counting objects:  71% (95/133)
+remote: Counting objects:  72% (96/133)
+remote: Counting objects:  73% (98/133)
+remote: Counting objects:  74% (99/133)
+remote: Counting objects:  75% (100/133)
+remote: Counting objects:  76% (102/133)
+remote: Counting objects:  77% (103/133)
+remote: Counting objects:  78% (104/133)
+remote: Counting objects:  79% (106/133)
+remote: Counting objects:  80% (107/133)
+remote: Counting objects:  81% (108/133)
+remote: Counting objects:  82% (110/133)
+remote: Counting objects:  83% (111/133)
+remote: Counting objects:  84% (112/133)
+remote: Counting objects:  85% (114/133)
+remote: Counting objects:  86% (115/133)
+remote: Counting objects:  87% (116/133)
+remote: Counting objects:  88% (118/133)
+remote: Counting objects:  89% (119/133)
+remote: Counting objects:  90% (120/133)
+remote: Counting objects:  91% (122/133)
+remote: Counting objects:  92% (123/133)
+remote: Counting objects:  93% (124/133)
+remote: Counting objects:  94% (126/133)
+remote: Counting objects:  95% (127/133)
+remote: Counting objects:  96% (128/133)
+remote: Counting objects:  97% (130/133)
+remote: Counting objects:  98% (131/133)
+remote: Counting objects:  99% (132/133)
+remote: Counting objects: 100% (133/133)
+remote: Counting objects: 100% (133/133), done.
+remote: Compressing objects:   1% (1/90)
+remote: Compressing objects:   2% (2/90)
+remote: Compressing objects:   3% (3/90)
+remote: Compressing objects:   4% (4/90)
+remote: Compressing objects:   5% (5/90)
+remote: Compressing objects:   6% (6/90)
+remote: Compressing objects:   7% (7/90)
+remote: Compressing objects:   8% (8/90)
+remote: Compressing objects:  10% (9/90)
+remote: Compressing objects:  11% (10/90)
+remote: Compressing objects:  12% (11/90)
+remote: Compressing objects:  13% (12/90)
+remote: Compressing objects:  14% (13/90)
+remote: Compressing objects:  15% (14/90)
+remote: Compressing objects:  16% (15/90)
+remote: Compressing objects:  17% (16/90)
+remote: Compressing objects:  18% (17/90)
+remote: Compressing objects:  20% (18/90)
+remote: Compressing objects:  21% (19/90)
+remote: Compressing objects:  22% (20/90)
+remote: Compressing objects:  23% (21/90)
+remote: Compressing objects:  24% (22/90)
+remote: Compressing objects:  25% (23/90)
+remote: Compressing objects:  26% (24/90)
+remote: Compressing objects:  27% (25/90)
+remote: Compressing objects:  28% (26/90)
+remote: Compressing objects:  30% (27/90)
+remote: Compressing objects:  31% (28/90)
+remote: Compressing objects:  32% (29/90)
+remote: Compressing objects:  33% (30/90)
+remote: Compressing objects:  34% (31/90)
+remote: Compressing objects:  35% (32/90)
+remote: Compressing objects:  36% (33/90)
+remote: Compressing objects:  37% (34/90)
+remote: Compressing objects:  38% (35/90)
+remote: Compressing objects:  40% (36/90)
+remote: Compressing objects:  41% (37/90)
+remote: Compressing objects:  42% (38/90)
+remote: Compressing objects:  43% (39/90)
+remote: Compressing objects:  44% (40/90)
+remote: Compressing objects:  45% (41/90)
+remote: Compressing objects:  46% (42/90)
+remote: Compressing objects:  47% (43/90)
+remote: Compressing objects:  48% (44/90)
+remote: Compressing objects:  50% (45/90)
+remote: Compressing objects:  51% (46/90)
+remote: Compressing objects:  52% (47/90)
+remote: Compressing objects:  53% (48/90)
+remote: Compressing objects:  54% (49/90)
+remote: Compressing objects:  55% (50/90)
+remote: Compressing objects:  56% (51/90)
+remote: Compressing objects:  57% (52/90)
+remote: Compressing objects:  58% (53/90)
+remote: Compressing objects:  60% (54/90)
+remote: Compressing objects:  61% (55/90)
+remote: Compressing objects:  62% (56/90)
+remote: Compressing objects:  63% (57/90)
+remote: Compressing objects:  64% (58/90)
+remote: Compressing objects:  65% (59/90)
+remote: Compressing objects:  66% (60/90)
+remote: Compressing objects:  67% (61/90)
+remote: Compressing objects:  68% (62/90)
+remote: Compressing objects:  70% (63/90)
+remote: Compressing objects:  71% (64/90)
+remote: Compressing objects:  72% (65/90)
+remote: Compressing objects:  73% (66/90)
+remote: Compressing objects:  74% (67/90)
+remote: Compressing objects:  75% (68/90)
+remote: Compressing objects:  76% (69/90)
+remote: Compressing objects:  77% (70/90)
+remote: Compressing objects:  78% (71/90)
+remote: Compressing objects:  80% (72/90)
+remote: Compressing objects:  81% (73/90)
+remote: Compressing objects:  82% (74/90)
+remote: Compressing objects:  83% (75/90)
+remote: Compressing objects:  84% (76/90)
+remote: Compressing objects:  85% (77/90)
+remote: Compressing objects:  86% (78/90)
+remote: Compressing objects:  87% (79/90)
+remote: Compressing objects:  88% (80/90)
+remote: Compressing objects:  90% (81/90)
+remote: Compressing objects:  91% (82/90)
+remote: Compressing objects:  92% (83/90)
+remote: Compressing objects:  93% (84/90)
+remote: Compressing objects:  94% (85/90)
+remote: Compressing objects:  95% (86/90)
+remote: Compressing objects:  96% (87/90)
+remote: Compressing objects:  97% (88/90)
+remote: Compressing objects:  98% (89/90)
+remote: Compressing objects: 100% (90/90)
+remote: Compressing objects: 100% (90/90), done.
+Receiving objects:   0% (1/282920)
+Receiving objects:   1% (2830/282920)
+Receiving objects:   2% (5659/282920)
+Receiving objects:   3% (8488/282920)
+Receiving objects:   4% (11317/282920)
+Receiving objects:   5% (14146/282920)
+Receiving objects:   6% (16976/282920)
+Receiving objects:   7% (19805/282920)
+Receiving objects:   8% (22634/282920), 12.77 MiB | 25.52 MiB/s
+Receiving objects:   9% (25463/282920), 12.77 MiB | 25.52 MiB/s
+Receiving objects:  10% (28292/282920), 12.77 MiB | 25.52 MiB/s
+Receiving objects:  11% (31122/282920), 12.77 MiB | 25.52 MiB/s
+Receiving objects:  12% (33951/282920), 12.77 MiB | 25.52 MiB/s
+Receiving objects:  13% (36780/282920), 12.77 MiB | 25.52 MiB/s
+Receiving objects:  14% (39609/282920), 12.77 MiB | 25.52 MiB/s
+Receiving objects:  15% (42438/282920), 12.77 MiB | 25.52 MiB/s
+Receiving objects:  16% (45268/282920), 12.77 MiB | 25.52 MiB/s
+Receiving objects:  17% (48097/282920), 12.77 MiB | 25.52 MiB/s
+Receiving objects:  18% (50926/282920), 12.77 MiB | 25.52 MiB/s
+Receiving objects:  19% (53755/282920), 12.77 MiB | 25.52 MiB/s
+Receiving objects:  20% (56584/282920), 12.77 MiB | 25.52 MiB/s
+Receiving objects:  21% (59414/282920), 12.77 MiB | 25.52 MiB/s
+Receiving objects:  21% (61114/282920), 12.77 MiB | 25.52 MiB/s
+Receiving objects:  22% (62243/282920), 26.46 MiB | 26.45 MiB/s
+Receiving objects:  23% (65072/282920), 26.46 MiB | 26.45 MiB/s
+Receiving objects:  24% (67901/282920), 26.46 MiB | 26.45 MiB/s
+Receiving objects:  25% (70730/282920), 26.46 MiB | 26.45 MiB/s
+Receiving objects:  26% (73560/282920), 26.46 MiB | 26.45 MiB/s
+Receiving objects:  27% (76389/282920), 26.46 MiB | 26.45 MiB/s
+Receiving objects:  28% (79218/282920), 26.46 MiB | 26.45 MiB/s
+Receiving objects:  29% (82047/282920), 26.46 MiB | 26.45 MiB/s
+Receiving objects:  30% (84876/282920), 26.46 MiB | 26.45 MiB/s
+Receiving objects:  31% (87706/282920), 26.46 MiB | 26.45 MiB/s
+Receiving objects:  32% (90535/282920), 26.46 MiB | 26.45 MiB/s
+Receiving objects:  33% (93364/282920), 26.46 MiB | 26.45 MiB/s
+Receiving objects:  34% (96193/282920), 26.46 MiB | 26.45 MiB/s
+Receiving objects:  35% (99022/282920), 26.46 MiB | 26.45 MiB/s
+Receiving objects:  36% (101852/282920), 26.46 MiB | 26.45 MiB/s
+Receiving objects:  37% (104681/282920), 26.46 MiB | 26.45 MiB/s
+Receiving objects:  38% (107510/282920), 26.46 MiB | 26.45 MiB/s
+Receiving objects:  39% (110339/282920), 26.46 MiB | 26.45 MiB/s
+Receiving objects:  40% (113168/282920), 45.13 MiB | 30.08 MiB/s
+Receiving objects:  41% (115998/282920), 45.13 MiB | 30.08 MiB/s
+Receiving objects:  42% (118827/282920), 45.13 MiB | 30.08 MiB/s
+Receiving objects:  43% (121656/282920), 45.13 MiB | 30.08 MiB/s
+Receiving objects:  44% (124485/282920), 45.13 MiB | 30.08 MiB/s
+Receiving objects:  45% (127314/282920), 45.13 MiB | 30.08 MiB/s
+Receiving objects:  46% (130144/282920), 45.13 MiB | 30.08 MiB/s
+Receiving objects:  47% (132973/282920), 45.13 MiB | 30.08 MiB/s
+Receiving objects:  48% (135802/282920), 45.13 MiB | 30.08 MiB/s
+Receiving objects:  49% (138631/282920), 45.13 MiB | 30.08 MiB/s
+Receiving objects:  50% (141460/282920), 45.13 MiB | 30.08 MiB/s
+Receiving objects:  51% (144290/282920), 45.13 MiB | 30.08 MiB/s
+Receiving objects:  52% (147119/282920), 45.13 MiB | 30.08 MiB/s
+Receiving objects:  53% (149948/282920), 45.13 MiB | 30.08 MiB/s
+Receiving objects:  54% (152777/282920), 45.13 MiB | 30.08 MiB/s
+Receiving objects:  55% (155606/282920), 45.13 MiB | 30.08 MiB/s
+Receiving objects:  56% (158436/282920), 45.13 MiB | 30.08 MiB/s
+Receiving objects:  57% (161265/282920), 45.13 MiB | 30.08 MiB/s
+Receiving objects:  58% (164094/282920), 45.13 MiB | 30.08 MiB/s
+Receiving objects:  59% (166923/282920), 45.13 MiB | 30.08 MiB/s
+Receiving objects:  60% (169752/282920), 45.13 MiB | 30.08 MiB/s
+Receiving objects:  60% (172112/282920), 45.13 MiB | 30.08 MiB/s
+Receiving objects:  61% (172582/282920), 63.89 MiB | 31.94 MiB/s
+Receiving objects:  62% (175411/282920), 63.89 MiB | 31.94 MiB/s
+Receiving objects:  63% (178240/282920), 63.89 MiB | 31.94 MiB/s
+Receiving objects:  64% (181069/282920), 63.89 MiB | 31.94 MiB/s
+Receiving objects:  65% (183898/282920), 63.89 MiB | 31.94 MiB/s
+Receiving objects:  66% (186728/282920), 63.89 MiB | 31.94 MiB/s
+Receiving objects:  67% (189557/282920), 63.89 MiB | 31.94 MiB/s
+Receiving objects:  68% (192386/282920), 63.89 MiB | 31.94 MiB/s
+Receiving objects:  69% (195215/282920), 63.89 MiB | 31.94 MiB/s
+Receiving objects:  70% (198044/282920), 63.89 MiB | 31.94 MiB/s
+Receiving objects:  71% (200874/282920), 63.89 MiB | 31.94 MiB/s
+Receiving objects:  72% (203703/282920), 63.89 MiB | 31.94 MiB/s
+Receiving objects:  73% (206532/282920), 63.89 MiB | 31.94 MiB/s
+Receiving objects:  74% (209361/282920), 63.89 MiB | 31.94 MiB/s
+Receiving objects:  75% (212190/282920), 63.89 MiB | 31.94 MiB/s
+Receiving objects:  76% (215020/282920), 63.89 MiB | 31.94 MiB/s
+Receiving objects:  77% (217849/282920), 63.89 MiB | 31.94 MiB/s
+Receiving objects:  78% (220678/282920), 63.89 MiB | 31.94 MiB/s
+Receiving objects:  79% (223507/282920), 63.89 MiB | 31.94 MiB/s
+Receiving objects:  80% (226336/282920), 63.89 MiB | 31.94 MiB/s
+Receiving objects:  81% (229166/282920), 63.89 MiB | 31.94 MiB/s
+Receiving objects:  82% (231995/282920), 63.89 MiB | 31.94 MiB/s
+Receiving objects:  83% (234824/282920), 63.89 MiB | 31.94 MiB/s
+Receiving objects:  84% (237653/282920), 63.89 MiB | 31.94 MiB/s
+Receiving objects:  85% (240482/282920), 63.89 MiB | 31.94 MiB/s
+Receiving objects:  86% (243312/282920), 63.89 MiB | 31.94 MiB/s
+Receiving objects:  87% (246141/282920), 63.89 MiB | 31.94 MiB/s
+Receiving objects:  88% (248970/282920), 63.89 MiB | 31.94 MiB/s
+Receiving objects:  89% (251799/282920), 63.89 MiB | 31.94 MiB/s
+Receiving objects:  90% (254628/282920), 63.89 MiB | 31.94 MiB/s
+Receiving objects:  91% (257458/282920), 63.89 MiB | 31.94 MiB/s
+Receiving objects:  92% (260287/282920), 63.89 MiB | 31.94 MiB/s
+Receiving objects:  93% (263116/282920), 84.02 MiB | 33.61 MiB/s
+Receiving objects:  94% (265945/282920), 84.02 MiB | 33.61 MiB/s
+Receiving objects:  95% (268774/282920), 84.02 MiB | 33.61 MiB/s
+Receiving objects:  96% (271604/282920), 84.02 MiB | 33.61 MiB/s
+Receiving objects:  97% (274433/282920), 84.02 MiB | 33.61 MiB/s
+Receiving objects:  98% (277262/282920), 84.02 MiB | 33.61 MiB/s
+Receiving objects:  99% (280091/282920), 84.02 MiB | 33.61 MiB/s
+remote: Total 282920 (delta 90), reused 43 (delta 43), pack-reused 282787 (from 2)
+Receiving objects: 100% (282920/282920), 84.02 MiB | 33.61 MiB/s
+Receiving objects: 100% (282920/282920), 88.04 MiB | 33.88 MiB/s, done.
+Resolving deltas:   0% (0/188889)
+Resolving deltas:   1% (1889/188889)
+Resolving deltas:   2% (3778/188889)
+Resolving deltas:   3% (5668/188889)
+Resolving deltas:   4% (7557/188889)
+Resolving deltas:   5% (9445/188889)
+Resolving deltas:   6% (11334/188889)
+Resolving deltas:   7% (13223/188889)
+Resolving deltas:   8% (15112/188889)
+Resolving deltas:   9% (17002/188889)
+Resolving deltas:  10% (18889/188889)
+Resolving deltas:  11% (20778/188889)
+Resolving deltas:  12% (22667/188889)
+Resolving deltas:  13% (24557/188889)
+Resolving deltas:  14% (26445/188889)
+Resolving deltas:  15% (28335/188889)
+Resolving deltas:  16% (30223/188889)
+Resolving deltas:  17% (32112/188889)
+Resolving deltas:  18% (34001/188889)
+Resolving deltas:  19% (35889/188889)
+Resolving deltas:  20% (37779/188889)
+Resolving deltas:  21% (39667/188889)
+Resolving deltas:  22% (41556/188889)
+Resolving deltas:  23% (43446/188889)
+Resolving deltas:  24% (45334/188889)
+Resolving deltas:  25% (47223/188889)
+Resolving deltas:  26% (49112/188889)
+Resolving deltas:  27% (51001/188889)
+Resolving deltas:  27% (51014/188889)
+Resolving deltas:  28% (52889/188889)
+Resolving deltas:  29% (54778/188889)
+Resolving deltas:  30% (56667/188889)
+Resolving deltas:  31% (58556/188889)
+Resolving deltas:  32% (60445/188889)
+Resolving deltas:  33% (62334/188889)
+Resolving deltas:  34% (64223/188889)
+Resolving deltas:  34% (65044/188889)
+Resolving deltas:  35% (66112/188889)
+Resolving deltas:  36% (68001/188889)
+Resolving deltas:  37% (69889/188889)
+Resolving deltas:  38% (71778/188889)
+Resolving deltas:  39% (73667/188889)
+Resolving deltas:  40% (75556/188889)
+Resolving deltas:  40% (77077/188889)
+Resolving deltas:  41% (77445/188889)
+Resolving deltas:  42% (79334/188889)
+Resolving deltas:  43% (81223/188889)
+Resolving deltas:  44% (83112/188889)
+Resolving deltas:  45% (85001/188889)
+Resolving deltas:  46% (86889/188889)
+Resolving deltas:  47% (88778/188889)
+Resolving deltas:  48% (90667/188889)
+Resolving deltas:  49% (92556/188889)
+Resolving deltas:  50% (94445/188889)
+Resolving deltas:  51% (96334/188889)
+Resolving deltas:  52% (98223/188889)
+Resolving deltas:  52% (99775/188889)
+Resolving deltas:  53% (100112/188889)
+Resolving deltas:  54% (102001/188889)
+Resolving deltas:  55% (103889/188889)
+Resolving deltas:  56% (105778/188889)
+Resolving deltas:  57% (107667/188889)
+Resolving deltas:  58% (109557/188889)
+Resolving deltas:  59% (111445/188889)
+Resolving deltas:  60% (113334/188889)
+Resolving deltas:  61% (115223/188889)
+Resolving deltas:  62% (117112/188889)
+Resolving deltas:  63% (119002/188889)
+Resolving deltas:  64% (120889/188889)
+Resolving deltas:  65% (122778/188889)
+Resolving deltas:  66% (124667/188889)
+Resolving deltas:  67% (126556/188889)
+Resolving deltas:  68% (128445/188889)
+Resolving deltas:  69% (130334/188889)
+Resolving deltas:  70% (132223/188889)
+Resolving deltas:  71% (134112/188889)
+Resolving deltas:  72% (136001/188889)
+Resolving deltas:  73% (137889/188889)
+Resolving deltas:  74% (139778/188889)
+Resolving deltas:  75% (141667/188889)
+Resolving deltas:  76% (143556/188889)
+Resolving deltas:  76% (143646/188889)
+Resolving deltas:  77% (145445/188889)
+Resolving deltas:  78% (147334/188889)
+Resolving deltas:  79% (149223/188889)
+Resolving deltas:  80% (151112/188889)
+Resolving deltas:  81% (153001/188889)
+Resolving deltas:  82% (154890/188889)
+Resolving deltas:  83% (156778/188889)
+Resolving deltas:  84% (158667/188889)
+Resolving deltas:  85% (160557/188889)
+Resolving deltas:  86% (162445/188889)
+Resolving deltas:  87% (164334/188889)
+Resolving deltas:  88% (166223/188889)
+Resolving deltas:  89% (168112/188889)
+Resolving deltas:  90% (170001/188889)
+Resolving deltas:  91% (171889/188889)
+Resolving deltas:  92% (173778/188889)
+Resolving deltas:  93% (175667/188889)
+Resolving deltas:  94% (177556/188889)
+Resolving deltas:  95% (179445/188889)
+Resolving deltas:  96% (181334/188889)
+Resolving deltas:  97% (183223/188889)
+Resolving deltas:  98% (185112/188889)
+Resolving deltas:  99% (187001/188889)
+Resolving deltas: 100% (188889/188889)
+Resolving deltas: 100% (188889/188889), done.
+Note: switching to 'dd3097e305afa53f7b4312371f62058d2e665320'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+repro@vm:~$ cd vcpkg
+
+repro@vm:~/vcpkg$ ./bootstrap-vcpkg.sh -disableMetrics
+
+Downloading vcpkg-glibc...
+vcpkg package management program version 2025-07-21-d4b65a2b83ae6c3526acd1c6f3b51aff2a884533
+
+See LICENSE.txt for license information.
+
+repro@vm:~/vcpkg$ cd ~/code/freeimage-test
+
+repro@vm:~/code/freeimage-test$ cmake --list-presets
+
+Available configure presets:
+
+  "repro"
+
+repro@vm:~/code/freeimage-test$ cmake --preset repro
+
+Preset CMake variables:
+
+  CMAKE_TOOLCHAIN_FILE="~/vcpkg/scripts/buildsystems/vcpkg.cmake"
+  VCPKG_TARGET_TRIPLET="x64-linux-dynamic"
+
+-- Running vcpkg install
+A suitable version of cmake was not found (required v3.30.1).
+Downloading https://github.com/Kitware/CMake/releases/download/v3.30.1/cmake-3.30.1-linux-x86_64.tar.gz -> cmake-3.30.1-linux-x86_64.tar.gz
+Successfully downloaded cmake-3.30.1-linux-x86_64.tar.gz
+Extracting cmake...
+Detecting compiler hash for triplet x64-linux...
+Compiler found: /usr/bin/c++
+Detecting compiler hash for triplet x64-linux-dynamic...
+Compiler found: /usr/bin/c++
+The following packages will be built and installed:
+    freeimage:x64-linux-dynamic@3.18.0#27
+  * imath:x64-linux-dynamic@3.1.12
+  * jasper:x64-linux-dynamic@4.2.4#2
+  * jxrlib:x64-linux-dynamic@2019.10.9#7
+  * lcms:x64-linux-dynamic@2.17
+  * libdeflate[compression,core,decompression,gzip,zlib]:x64-linux-dynamic@1.24
+  * libjpeg-turbo:x64-linux-dynamic@3.1.0#2
+  * liblzma:x64-linux-dynamic@5.8.1
+  * libpng:x64-linux-dynamic@1.6.48
+  * libraw:x64-linux-dynamic@0.21.4
+  * libwebp[core,libwebpmux,nearlossless,simd]:x64-linux-dynamic@1.5.0#1
+  * openexr:x64-linux-dynamic@3.3.4
+  * openjpeg:x64-linux-dynamic@2.5.3
+  * tiff[core,jpeg,lzma,zip]:x64-linux-dynamic@4.7.0
+  * vcpkg-cmake:x64-linux@2024-04-23
+  * vcpkg-cmake-config:x64-linux@2024-05-23
+  * vcpkg-cmake-get-vars:x64-linux@2025-05-29
+  * vcpkg-tool-meson:x64-linux@1.8.2
+  * zlib:x64-linux-dynamic@1.3.1
+Additional packages (*) will be modified to complete this operation.
+Restored 0 package(s) from /home/repro/.cache/vcpkg/archives in 39.6 us. Use --debug to see more details.
+Installing 1/19 vcpkg-cmake:x64-linux@2024-04-23...
+Building vcpkg-cmake:x64-linux@2024-04-23...
+-- Installing: /home/repro/vcpkg/packages/vcpkg-cmake_x64-linux/share/vcpkg-cmake/vcpkg_cmake_configure.cmake
+-- Installing: /home/repro/vcpkg/packages/vcpkg-cmake_x64-linux/share/vcpkg-cmake/vcpkg_cmake_build.cmake
+-- Installing: /home/repro/vcpkg/packages/vcpkg-cmake_x64-linux/share/vcpkg-cmake/vcpkg_cmake_install.cmake
+-- Installing: /home/repro/vcpkg/packages/vcpkg-cmake_x64-linux/share/vcpkg-cmake/vcpkg-port-config.cmake
+-- Installing: /home/repro/vcpkg/packages/vcpkg-cmake_x64-linux/share/vcpkg-cmake/copyright
+-- Performing post-build validation
+Starting submission of vcpkg-cmake:x64-linux@2024-04-23 to 1 binary cache(s) in the background
+Elapsed time to handle vcpkg-cmake:x64-linux: 28.5 ms
+vcpkg-cmake:x64-linux package ABI: bb8a6ae22d696f8ca527441abeff7e0df23f45bbe747c216fbdaafeed54b32c6
+Installing 2/19 zlib:x64-linux-dynamic@1.3.1...
+Building zlib:x64-linux-dynamic@1.3.1...
+/home/repro/vcpkg/triplets/community/x64-linux-dynamic.cmake: info: loaded community triplet from here. Community triplets are not built in the curated registry and are thus less likely to succeed.
+Downloading https://github.com/madler/zlib/archive/v1.3.1.tar.gz -> madler-zlib-v1.3.1.tar.gz
+Successfully downloaded madler-zlib-v1.3.1.tar.gz
+-- Extracting source /home/repro/vcpkg/downloads/madler-zlib-v1.3.1.tar.gz
+-- Applying patch 0001-Prevent-invalid-inclusions-when-HAVE_-is-set-to-0.patch
+-- Applying patch 0002-build-static-or-shared-not-both.patch
+-- Applying patch 0003-android-and-mingw-fixes.patch
+-- Using source at /home/repro/vcpkg/buildtrees/zlib/src/v1.3.1-2e5db616bf.clean
+-- Configuring x64-linux-dynamic
+-- Building x64-linux-dynamic-dbg
+-- Building x64-linux-dynamic-rel
+-- Installing: /home/repro/vcpkg/packages/zlib_x64-linux-dynamic/share/zlib/vcpkg-cmake-wrapper.cmake
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/zlib_x64-linux-dynamic/lib/pkgconfig/zlib.pc
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/zlib_x64-linux-dynamic/debug/lib/pkgconfig/zlib.pc
+-- Installing: /home/repro/vcpkg/packages/zlib_x64-linux-dynamic/share/zlib/copyright
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/zlib_x64-linux-dynamic/debug/lib/libz.so.1.3.1' (From '' -> To '$ORIGIN')
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/zlib_x64-linux-dynamic/lib/libz.so.1.3.1' (From '' -> To '$ORIGIN')
+-- Performing post-build validation
+Starting submission of zlib:x64-linux-dynamic@1.3.1 to 1 binary cache(s) in the background
+Elapsed time to handle zlib:x64-linux-dynamic: 2.5 s
+zlib:x64-linux-dynamic package ABI: 3c45e76563bca48a7b3c62e88d9d84abe237411b281bbffda294944e6376a651
+Completed submission of vcpkg-cmake:x64-linux@2024-04-23 to 1 binary cache(s) in 2.36 ms
+Installing 3/19 vcpkg-cmake-config:x64-linux@2024-05-23...
+Building vcpkg-cmake-config:x64-linux@2024-05-23...
+-- Installing: /home/repro/vcpkg/packages/vcpkg-cmake-config_x64-linux/share/vcpkg-cmake-config/vcpkg_cmake_config_fixup.cmake
+-- Installing: /home/repro/vcpkg/packages/vcpkg-cmake-config_x64-linux/share/vcpkg-cmake-config/vcpkg-port-config.cmake
+-- Installing: /home/repro/vcpkg/packages/vcpkg-cmake-config_x64-linux/share/vcpkg-cmake-config/copyright
+-- Skipping post-build validation due to VCPKG_POLICY_EMPTY_PACKAGE
+Starting submission of vcpkg-cmake-config:x64-linux@2024-05-23 to 1 binary cache(s) in the background
+Elapsed time to handle vcpkg-cmake-config:x64-linux: 21.4 ms
+vcpkg-cmake-config:x64-linux package ABI: 44fb241321d17ff0677d333dd4b1dd0c42c2ef183851de0559f759a6f282b054
+Installing 4/19 liblzma:x64-linux-dynamic@5.8.1...
+Building liblzma:x64-linux-dynamic@5.8.1...
+/home/repro/vcpkg/triplets/community/x64-linux-dynamic.cmake: info: loaded community triplet from here. Community triplets are not built in the curated registry and are thus less likely to succeed.
+Downloading https://github.com/tukaani-project/xz/archive/v5.8.1.tar.gz -> tukaani-project-xz-v5.8.1.tar.gz
+Successfully downloaded tukaani-project-xz-v5.8.1.tar.gz
+-- Extracting source /home/repro/vcpkg/downloads/tukaani-project-xz-v5.8.1.tar.gz
+-- Applying patch build-tools.patch
+-- Using source at /home/repro/vcpkg/buildtrees/liblzma/src/v5.8.1-7ed4ee158b.clean
+-- Configuring x64-linux-dynamic
+-- Building x64-linux-dynamic-dbg
+-- Building x64-linux-dynamic-rel
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/liblzma_x64-linux-dynamic/lib/pkgconfig/liblzma.pc
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/liblzma_x64-linux-dynamic/debug/lib/pkgconfig/liblzma.pc
+-- Installing: /home/repro/vcpkg/packages/liblzma_x64-linux-dynamic/share/liblzma/copyright
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/liblzma_x64-linux-dynamic/debug/lib/liblzma.so.5.8.1' (From '' -> To '$ORIGIN')
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/liblzma_x64-linux-dynamic/lib/liblzma.so.5.8.1' (From '' -> To '$ORIGIN')
+-- Performing post-build validation
+Starting submission of liblzma:x64-linux-dynamic@5.8.1 to 1 binary cache(s) in the background
+Elapsed time to handle liblzma:x64-linux-dynamic: 11 s
+liblzma:x64-linux-dynamic package ABI: 04e4ed91353b0ad2f8472c9ebd0813804c094359e7f1db454d6650b36d49d7c3
+Completed submission of zlib:x64-linux-dynamic@1.3.1 to 1 binary cache(s) in 26.4 ms
+Completed submission of vcpkg-cmake-config:x64-linux@2024-05-23 to 1 binary cache(s) in 2 ms
+Installing 5/19 libjpeg-turbo:x64-linux-dynamic@3.1.0#2...
+Building libjpeg-turbo:x64-linux-dynamic@3.1.0#2...
+/home/repro/vcpkg/triplets/community/x64-linux-dynamic.cmake: info: loaded community triplet from here. Community triplets are not built in the curated registry and are thus less likely to succeed.
+Downloading https://github.com/libjpeg-turbo/libjpeg-turbo/archive/3.1.0.tar.gz -> libjpeg-turbo-libjpeg-turbo-3.1.0.tar.gz
+Successfully downloaded libjpeg-turbo-libjpeg-turbo-3.1.0.tar.gz
+-- Extracting source /home/repro/vcpkg/downloads/libjpeg-turbo-libjpeg-turbo-3.1.0.tar.gz
+-- Applying patch add-options-for-exes-docs-headers.patch
+-- Applying patch workaround_cmake_system_processor.patch
+-- Using source at /home/repro/vcpkg/buildtrees/libjpeg-turbo/src/3.1.0-61083179ee.clean
+-- Configuring x64-linux-dynamic
+-- Building x64-linux-dynamic-dbg
+-- Building x64-linux-dynamic-rel
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/libjpeg-turbo_x64-linux-dynamic/lib/pkgconfig/libjpeg.pc
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/libjpeg-turbo_x64-linux-dynamic/lib/pkgconfig/libturbojpeg.pc
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/libjpeg-turbo_x64-linux-dynamic/debug/lib/pkgconfig/libjpeg.pc
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/libjpeg-turbo_x64-linux-dynamic/debug/lib/pkgconfig/libturbojpeg.pc
+-- Installing: /home/repro/vcpkg/packages/libjpeg-turbo_x64-linux-dynamic/share/libjpeg-turbo/copyright
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/libjpeg-turbo_x64-linux-dynamic/debug/lib/libjpeg.so.62.4.0' (From '/home/repro/vcpkg/packages/libjpeg-turbo_x64-linux-dynamic/debug/lib' -> To '$ORIGIN')
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/libjpeg-turbo_x64-linux-dynamic/debug/lib/libturbojpeg.so.0.4.0' (From '/home/repro/vcpkg/packages/libjpeg-turbo_x64-linux-dynamic/debug/lib' -> To '$ORIGIN')
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/libjpeg-turbo_x64-linux-dynamic/lib/libjpeg.so.62.4.0' (From '/home/repro/vcpkg/packages/libjpeg-turbo_x64-linux-dynamic/lib' -> To '$ORIGIN')
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/libjpeg-turbo_x64-linux-dynamic/lib/libturbojpeg.so.0.4.0' (From '/home/repro/vcpkg/packages/libjpeg-turbo_x64-linux-dynamic/lib' -> To '$ORIGIN')
+-- Performing post-build validation
+Starting submission of libjpeg-turbo:x64-linux-dynamic@3.1.0#2 to 1 binary cache(s) in the background
+Elapsed time to handle libjpeg-turbo:x64-linux-dynamic: 18 s
+libjpeg-turbo:x64-linux-dynamic package ABI: c6a57f7751abd90dd3d70dfe598820cab02012552124ac2c1d81874266b72917
+Completed submission of liblzma:x64-linux-dynamic@5.8.1 to 1 binary cache(s) in 66.5 ms
+Installing 6/19 tiff[core,jpeg,lzma,zip]:x64-linux-dynamic@4.7.0...
+Building tiff[core,jpeg,lzma,zip]:x64-linux-dynamic@4.7.0...
+/home/repro/vcpkg/triplets/community/x64-linux-dynamic.cmake: info: loaded community triplet from here. Community triplets are not built in the curated registry and are thus less likely to succeed.
+Downloading https://gitlab.com/libtiff/libtiff/-/archive/v4.7.0/libtiff-v4.7.0.tar.gz -> libtiff-libtiff-v4.7.0.tar.gz
+Successfully downloaded libtiff-libtiff-v4.7.0.tar.gz
+-- Extracting source /home/repro/vcpkg/downloads/libtiff-libtiff-v4.7.0.tar.gz
+-- Applying patch FindCMath.patch
+-- Applying patch prefer-config.diff
+-- Using source at /home/repro/vcpkg/buildtrees/tiff/src/v4.7.0-05e0c9997b.clean
+-- Configuring x64-linux-dynamic
+-- Building x64-linux-dynamic-dbg
+-- Building x64-linux-dynamic-rel
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/tiff_x64-linux-dynamic/lib/pkgconfig/libtiff-4.pc
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/tiff_x64-linux-dynamic/debug/lib/pkgconfig/libtiff-4.pc
+-- Installing: /home/repro/vcpkg/packages/tiff_x64-linux-dynamic/share/tiff/copyright
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/tiff_x64-linux-dynamic/debug/lib/libtiffd.so.6.1.0' (From '' -> To '$ORIGIN')
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/tiff_x64-linux-dynamic/lib/libtiff.so.6.1.0' (From '' -> To '$ORIGIN')
+-- Performing post-build validation
+Starting submission of tiff[core,jpeg,lzma,zip]:x64-linux-dynamic@4.7.0 to 1 binary cache(s) in the background
+Elapsed time to handle tiff:x64-linux-dynamic: 7.1 s
+tiff:x64-linux-dynamic package ABI: fd5e88edd2a0a075d6cf09c9a74eab90fa661e4940cb2b5e068f553232279752
+Completed submission of libjpeg-turbo:x64-linux-dynamic@3.1.0#2 to 1 binary cache(s) in 269 ms
+Installing 7/19 openjpeg:x64-linux-dynamic@2.5.3...
+Building openjpeg:x64-linux-dynamic@2.5.3...
+/home/repro/vcpkg/triplets/community/x64-linux-dynamic.cmake: info: loaded community triplet from here. Community triplets are not built in the curated registry and are thus less likely to succeed.
+Downloading https://github.com/uclouvain/openjpeg/archive/v2.5.3.tar.gz -> uclouvain-openjpeg-v2.5.3.tar.gz
+Successfully downloaded uclouvain-openjpeg-v2.5.3.tar.gz
+-- Extracting source /home/repro/vcpkg/downloads/uclouvain-openjpeg-v2.5.3.tar.gz
+-- Applying patch third-party.diff
+-- Using source at /home/repro/vcpkg/buildtrees/openjpeg/src/v2.5.3-3517784c4c.clean
+-- Configuring x64-linux-dynamic
+-- Building x64-linux-dynamic-dbg
+-- Building x64-linux-dynamic-rel
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/openjpeg_x64-linux-dynamic/lib/pkgconfig/libopenjp2.pc
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/openjpeg_x64-linux-dynamic/debug/lib/pkgconfig/libopenjp2.pc
+-- Installing: /home/repro/vcpkg/packages/openjpeg_x64-linux-dynamic/share/openjpeg/usage
+-- Installing: /home/repro/vcpkg/packages/openjpeg_x64-linux-dynamic/share/openjpeg/copyright
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/openjpeg_x64-linux-dynamic/debug/lib/libopenjp2.so.2.5.3' (From '' -> To '$ORIGIN')
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/openjpeg_x64-linux-dynamic/lib/libopenjp2.so.2.5.3' (From '' -> To '$ORIGIN')
+-- Performing post-build validation
+Starting submission of openjpeg:x64-linux-dynamic@2.5.3 to 1 binary cache(s) in the background
+Elapsed time to handle openjpeg:x64-linux-dynamic: 8.8 s
+openjpeg:x64-linux-dynamic package ABI: dcdbfc56ca4d6ec41b7249b94b0f5519e1df474e695ccd2d00e2371d03c0fcf2
+Completed submission of tiff[core,jpeg,lzma,zip]:x64-linux-dynamic@4.7.0 to 1 binary cache(s) in 96.6 ms
+Installing 8/19 libdeflate[compression,core,decompression,gzip,zlib]:x64-linux-dynamic@1.24...
+Building libdeflate[compression,core,decompression,gzip,zlib]:x64-linux-dynamic@1.24...
+/home/repro/vcpkg/triplets/community/x64-linux-dynamic.cmake: info: loaded community triplet from here. Community triplets are not built in the curated registry and are thus less likely to succeed.
+Downloading https://github.com/ebiggers/libdeflate/archive/v1.24.tar.gz -> ebiggers-libdeflate-v1.24.tar.gz
+Successfully downloaded ebiggers-libdeflate-v1.24.tar.gz
+-- Extracting source /home/repro/vcpkg/downloads/ebiggers-libdeflate-v1.24.tar.gz
+-- Applying patch remove_wrong_c_flags_modification.diff
+-- Using source at /home/repro/vcpkg/buildtrees/libdeflate/src/v1.24-17dfa8f970.clean
+-- Configuring x64-linux-dynamic
+-- Building x64-linux-dynamic-dbg
+-- Building x64-linux-dynamic-rel
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/libdeflate_x64-linux-dynamic/lib/pkgconfig/libdeflate.pc
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/libdeflate_x64-linux-dynamic/debug/lib/pkgconfig/libdeflate.pc
+-- Installing: /home/repro/vcpkg/packages/libdeflate_x64-linux-dynamic/share/libdeflate/copyright
+-- Installing: /home/repro/vcpkg/packages/libdeflate_x64-linux-dynamic/share/libdeflate/usage
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/libdeflate_x64-linux-dynamic/debug/lib/libdeflate.so.0' (From '' -> To '$ORIGIN')
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/libdeflate_x64-linux-dynamic/lib/libdeflate.so.0' (From '' -> To '$ORIGIN')
+-- Performing post-build validation
+Starting submission of libdeflate[compression,core,decompression,gzip,zlib]:x64-linux-dynamic@1.24 to 1 binary cache(s) in the background
+Elapsed time to handle libdeflate:x64-linux-dynamic: 5.4 s
+libdeflate:x64-linux-dynamic package ABI: b66aa5fc7f18fe0d08b4fc26457563a108a1e83072bff3b89b45aaf62db98c48
+Completed submission of openjpeg:x64-linux-dynamic@2.5.3 to 1 binary cache(s) in 78 ms
+Installing 9/19 imath:x64-linux-dynamic@3.1.12...
+Building imath:x64-linux-dynamic@3.1.12...
+/home/repro/vcpkg/triplets/community/x64-linux-dynamic.cmake: info: loaded community triplet from here. Community triplets are not built in the curated registry and are thus less likely to succeed.
+Downloading https://github.com/AcademySoftwareFoundation/Imath/archive/v3.1.12.tar.gz -> AcademySoftwareFoundation-Imath-v3.1.12.tar.gz
+Successfully downloaded AcademySoftwareFoundation-Imath-v3.1.12.tar.gz
+-- Extracting source /home/repro/vcpkg/downloads/AcademySoftwareFoundation-Imath-v3.1.12.tar.gz
+-- Using source at /home/repro/vcpkg/buildtrees/imath/src/v3.1.12-874a67ad8f.clean
+-- Configuring x64-linux-dynamic
+-- Building x64-linux-dynamic-dbg
+-- Building x64-linux-dynamic-rel
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/imath_x64-linux-dynamic/lib/pkgconfig/Imath.pc
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/imath_x64-linux-dynamic/debug/lib/pkgconfig/Imath.pc
+-- Installing: /home/repro/vcpkg/packages/imath_x64-linux-dynamic/share/imath/copyright
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/imath_x64-linux-dynamic/debug/lib/libImath-3_1_d.so.29.11.0' (From '$ORIGIN/../lib:/home/repro/vcpkg/packages/imath_x64-linux-dynamic/debug/lib' -> To '$ORIGIN:$ORIGIN/../lib')
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/imath_x64-linux-dynamic/lib/libImath-3_1.so.29.11.0' (From '$ORIGIN/../lib:/home/repro/vcpkg/packages/imath_x64-linux-dynamic/lib' -> To '$ORIGIN:$ORIGIN/../lib')
+-- Performing post-build validation
+Starting submission of imath:x64-linux-dynamic@3.1.12 to 1 binary cache(s) in the background
+Elapsed time to handle imath:x64-linux-dynamic: 6.3 s
+imath:x64-linux-dynamic package ABI: fb123e07648c4b7ab47cea53bb0e7237ddcce18b5cb130088f8ab1af7a68d212
+Completed submission of libdeflate[compression,core,decompression,gzip,zlib]:x64-linux-dynamic@1.24 to 1 binary cache(s) in 29.1 ms
+Installing 10/19 openexr:x64-linux-dynamic@3.3.4...
+Building openexr:x64-linux-dynamic@3.3.4...
+/home/repro/vcpkg/triplets/community/x64-linux-dynamic.cmake: info: loaded community triplet from here. Community triplets are not built in the curated registry and are thus less likely to succeed.
+Downloading https://github.com/AcademySoftwareFoundation/openexr/archive/v3.3.4.tar.gz -> AcademySoftwareFoundation-openexr-v3.3.4.tar.gz
+Successfully downloaded AcademySoftwareFoundation-openexr-v3.3.4.tar.gz
+-- Extracting source /home/repro/vcpkg/downloads/AcademySoftwareFoundation-openexr-v3.3.4.tar.gz
+-- Using source at /home/repro/vcpkg/buildtrees/openexr/src/v3.3.4-074946abaa.clean
+-- Configuring x64-linux-dynamic
+-- Building x64-linux-dynamic-dbg
+-- Building x64-linux-dynamic-rel
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/openexr_x64-linux-dynamic/lib/pkgconfig/OpenEXR.pc
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/openexr_x64-linux-dynamic/debug/lib/pkgconfig/OpenEXR.pc
+-- Installing: /home/repro/vcpkg/packages/openexr_x64-linux-dynamic/share/openexr/usage
+-- Installing: /home/repro/vcpkg/packages/openexr_x64-linux-dynamic/share/openexr/copyright
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/openexr_x64-linux-dynamic/debug/lib/libIex-3_3_d.so.32.3.3.4' (From '$ORIGIN/../lib:/home/repro/vcpkg/packages/openexr_x64-linux-dynamic/debug/lib' -> To '$ORIGIN:$ORIGIN/../lib')
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/openexr_x64-linux-dynamic/debug/lib/libIlmThread-3_3_d.so.32.3.3.4' (From '$ORIGIN/../lib:/home/repro/vcpkg/packages/openexr_x64-linux-dynamic/debug/lib' -> To '$ORIGIN:$ORIGIN/../lib')
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/openexr_x64-linux-dynamic/debug/lib/libOpenEXR-3_3_d.so.32.3.3.4' (From '$ORIGIN/../lib:/home/repro/vcpkg/packages/openexr_x64-linux-dynamic/debug/lib:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib' -> To '$ORIGIN:$ORIGIN/../lib')
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/openexr_x64-linux-dynamic/debug/lib/libOpenEXRCore-3_3_d.so.32.3.3.4' (From '$ORIGIN/../lib:/home/repro/vcpkg/packages/openexr_x64-linux-dynamic/debug/lib:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib' -> To '$ORIGIN:$ORIGIN/../lib')
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/openexr_x64-linux-dynamic/debug/lib/libOpenEXRUtil-3_3_d.so.32.3.3.4' (From '$ORIGIN/../lib:/home/repro/vcpkg/packages/openexr_x64-linux-dynamic/debug/lib:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib' -> To '$ORIGIN:$ORIGIN/../lib')
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/openexr_x64-linux-dynamic/lib/libIex-3_3.so.32.3.3.4' (From '$ORIGIN/../lib:/home/repro/vcpkg/packages/openexr_x64-linux-dynamic/lib' -> To '$ORIGIN:$ORIGIN/../lib')
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/openexr_x64-linux-dynamic/lib/libIlmThread-3_3.so.32.3.3.4' (From '$ORIGIN/../lib:/home/repro/vcpkg/packages/openexr_x64-linux-dynamic/lib' -> To '$ORIGIN:$ORIGIN/../lib')
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/openexr_x64-linux-dynamic/lib/libOpenEXR-3_3.so.32.3.3.4' (From '$ORIGIN/../lib:/home/repro/vcpkg/packages/openexr_x64-linux-dynamic/lib:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib' -> To '$ORIGIN:$ORIGIN/../lib')
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/openexr_x64-linux-dynamic/lib/libOpenEXRCore-3_3.so.32.3.3.4' (From '$ORIGIN/../lib:/home/repro/vcpkg/packages/openexr_x64-linux-dynamic/lib:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib' -> To '$ORIGIN:$ORIGIN/../lib')
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/openexr_x64-linux-dynamic/lib/libOpenEXRUtil-3_3.so.32.3.3.4' (From '$ORIGIN/../lib:/home/repro/vcpkg/packages/openexr_x64-linux-dynamic/lib:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib' -> To '$ORIGIN:$ORIGIN/../lib')
+-- Performing post-build validation
+Starting submission of openexr:x64-linux-dynamic@3.3.4 to 1 binary cache(s) in the background
+Elapsed time to handle openexr:x64-linux-dynamic: 1.4 min
+openexr:x64-linux-dynamic package ABI: 518d2398a223533d8e69ff72e7838415010e09728c257a2fb1b1ba5cb6372473
+Completed submission of imath:x64-linux-dynamic@3.1.12 to 1 binary cache(s) in 73.6 ms
+Installing 11/19 libwebp[core,libwebpmux,nearlossless,simd]:x64-linux-dynamic@1.5.0#1...
+Building libwebp[core,libwebpmux,nearlossless,simd]:x64-linux-dynamic@1.5.0#1...
+/home/repro/vcpkg/triplets/community/x64-linux-dynamic.cmake: info: loaded community triplet from here. Community triplets are not built in the curated registry and are thus less likely to succeed.
+Downloading https://github.com/webmproject/libwebp/archive/v1.5.0.tar.gz -> webmproject-libwebp-v1.5.0.tar.gz
+Successfully downloaded webmproject-libwebp-v1.5.0.tar.gz
+-- Extracting source /home/repro/vcpkg/downloads/webmproject-libwebp-v1.5.0.tar.gz
+-- Applying patch 0002-cmake-config.patch
+-- Applying patch 0003-simd.patch
+-- Applying patch 0008-sdl.patch
+-- Using source at /home/repro/vcpkg/buildtrees/libwebp/src/v1.5.0-9ee206ccc1.clean
+-- Configuring x64-linux-dynamic
+-- Building x64-linux-dynamic-dbg
+-- Building x64-linux-dynamic-rel
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/libwebp_x64-linux-dynamic/lib/pkgconfig/libsharpyuv.pc
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/libwebp_x64-linux-dynamic/lib/pkgconfig/libwebp.pc
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/libwebp_x64-linux-dynamic/lib/pkgconfig/libwebpdecoder.pc
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/libwebp_x64-linux-dynamic/lib/pkgconfig/libwebpdemux.pc
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/libwebp_x64-linux-dynamic/lib/pkgconfig/libwebpmux.pc
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/libwebp_x64-linux-dynamic/debug/lib/pkgconfig/libsharpyuv.pc
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/libwebp_x64-linux-dynamic/debug/lib/pkgconfig/libwebp.pc
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/libwebp_x64-linux-dynamic/debug/lib/pkgconfig/libwebpdecoder.pc
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/libwebp_x64-linux-dynamic/debug/lib/pkgconfig/libwebpdemux.pc
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/libwebp_x64-linux-dynamic/debug/lib/pkgconfig/libwebpmux.pc
+-- Installing: /home/repro/vcpkg/packages/libwebp_x64-linux-dynamic/share/libwebp/usage
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/libwebp_x64-linux-dynamic/debug/lib/libsharpyuv.so.0.1.1' (From '/home/repro/vcpkg/packages/libwebp_x64-linux-dynamic/debug/lib' -> To '$ORIGIN')
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/libwebp_x64-linux-dynamic/debug/lib/libwebp.so.7.1.10' (From '/home/repro/vcpkg/packages/libwebp_x64-linux-dynamic/debug/lib' -> To '$ORIGIN')
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/libwebp_x64-linux-dynamic/debug/lib/libwebpdecoder.so.3.1.10' (From '/home/repro/vcpkg/packages/libwebp_x64-linux-dynamic/debug/lib' -> To '$ORIGIN')
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/libwebp_x64-linux-dynamic/debug/lib/libwebpdemux.so.2.0.16' (From '/home/repro/vcpkg/packages/libwebp_x64-linux-dynamic/debug/lib' -> To '$ORIGIN')
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/libwebp_x64-linux-dynamic/debug/lib/libwebpmux.so.3.1.1' (From '/home/repro/vcpkg/packages/libwebp_x64-linux-dynamic/debug/lib' -> To '$ORIGIN')
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/libwebp_x64-linux-dynamic/lib/libsharpyuv.so.0.1.1' (From '/home/repro/vcpkg/packages/libwebp_x64-linux-dynamic/lib' -> To '$ORIGIN')
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/libwebp_x64-linux-dynamic/lib/libwebp.so.7.1.10' (From '/home/repro/vcpkg/packages/libwebp_x64-linux-dynamic/lib' -> To '$ORIGIN')
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/libwebp_x64-linux-dynamic/lib/libwebpdecoder.so.3.1.10' (From '/home/repro/vcpkg/packages/libwebp_x64-linux-dynamic/lib' -> To '$ORIGIN')
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/libwebp_x64-linux-dynamic/lib/libwebpdemux.so.2.0.16' (From '/home/repro/vcpkg/packages/libwebp_x64-linux-dynamic/lib' -> To '$ORIGIN')
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/libwebp_x64-linux-dynamic/lib/libwebpmux.so.3.1.1' (From '/home/repro/vcpkg/packages/libwebp_x64-linux-dynamic/lib' -> To '$ORIGIN')
+-- Performing post-build validation
+Starting submission of libwebp[core,libwebpmux,nearlossless,simd]:x64-linux-dynamic@1.5.0#1 to 1 binary cache(s) in the background
+Elapsed time to handle libwebp:x64-linux-dynamic: 14 s
+libwebp:x64-linux-dynamic package ABI: f9f7e06bc6c381e077e103675cb180bb2f1ce6618fc7a6fc477fc8391ac58830
+Completed submission of openexr:x64-linux-dynamic@3.3.4 to 1 binary cache(s) in 803 ms
+Installing 12/19 vcpkg-cmake-get-vars:x64-linux@2025-05-29...
+Building vcpkg-cmake-get-vars:x64-linux@2025-05-29...
+-- Installing: /home/repro/vcpkg/packages/vcpkg-cmake-get-vars_x64-linux/share/vcpkg-cmake-get-vars/vcpkg_cmake_get_vars.cmake
+-- Installing: /home/repro/vcpkg/packages/vcpkg-cmake-get-vars_x64-linux/share/vcpkg-cmake-get-vars/cmake_get_vars
+-- Installing: /home/repro/vcpkg/packages/vcpkg-cmake-get-vars_x64-linux/share/vcpkg-cmake-get-vars/cmake_get_vars/CMakeLists.txt
+-- Installing: /home/repro/vcpkg/packages/vcpkg-cmake-get-vars_x64-linux/share/vcpkg-cmake-get-vars/cmake-get-vars.cmake.in
+-- Installing: /home/repro/vcpkg/packages/vcpkg-cmake-get-vars_x64-linux/share/vcpkg-cmake-get-vars/vcpkg-port-config.cmake
+-- Installing: /home/repro/vcpkg/packages/vcpkg-cmake-get-vars_x64-linux/share/vcpkg-cmake-get-vars/copyright
+-- Performing post-build validation
+Starting submission of vcpkg-cmake-get-vars:x64-linux@2025-05-29 to 1 binary cache(s) in the background
+Elapsed time to handle vcpkg-cmake-get-vars:x64-linux: 31.5 ms
+vcpkg-cmake-get-vars:x64-linux package ABI: e5cf4fde337328e3fd3b997573a6402a3df928ce2ea99c328d461a5696508c13
+Installing 13/19 vcpkg-tool-meson:x64-linux@1.8.2...
+Building vcpkg-tool-meson:x64-linux@1.8.2...
+-- Installing: /home/repro/vcpkg/packages/vcpkg-tool-meson_x64-linux/share/vcpkg-tool-meson/copyright
+Downloading https://github.com/mesonbuild/meson/archive/1.8.2.tar.gz -> meson-1.8.2.tar.gz
+Successfully downloaded meson-1.8.2.tar.gz
+-- Applying patch /home/repro/vcpkg/packages/vcpkg-tool-meson_x64-linux/share/vcpkg-tool-meson/meson-intl.patch
+-- Applying patch /home/repro/vcpkg/packages/vcpkg-tool-meson_x64-linux/share/vcpkg-tool-meson/adjust-python-dep.patch
+-- Applying patch /home/repro/vcpkg/packages/vcpkg-tool-meson_x64-linux/share/vcpkg-tool-meson/adjust-args.patch
+-- Applying patch /home/repro/vcpkg/packages/vcpkg-tool-meson_x64-linux/share/vcpkg-tool-meson/remove-freebsd-pcfile-specialization.patch
+-- Applying patch /home/repro/vcpkg/packages/vcpkg-tool-meson_x64-linux/share/vcpkg-tool-meson/fix-libcpp-enable-assertions.patch
+-- Found Python version '3.11.2 at /usr/bin/python3'
+-- Using meson: /home/repro/vcpkg/downloads/tools/meson-1.8.2-3d2461/meson.py
+-- Performing post-build validation
+Starting submission of vcpkg-tool-meson:x64-linux@1.8.2 to 1 binary cache(s) in the background
+Elapsed time to handle vcpkg-tool-meson:x64-linux: 1.3 s
+vcpkg-tool-meson:x64-linux package ABI: c95f339e9ff35c60c26a2019d4aac6e47600a2348e8de895940ae2036443008b
+Completed submission of libwebp[core,libwebpmux,nearlossless,simd]:x64-linux-dynamic@1.5.0#1 to 1 binary cache(s) in 267 ms
+Completed submission of vcpkg-cmake-get-vars:x64-linux@2025-05-29 to 1 binary cache(s) in 1.91 ms
+Installing 14/19 lcms:x64-linux-dynamic@2.17...
+Building lcms:x64-linux-dynamic@2.17...
+/home/repro/vcpkg/triplets/community/x64-linux-dynamic.cmake: info: loaded community triplet from here. Community triplets are not built in the curated registry and are thus less likely to succeed.
+-- Found Python version '3.11.2 at /usr/bin/python3'
+-- Using meson: /home/repro/vcpkg/downloads/tools/meson-1.8.2-3d2461/meson.py
+Downloading https://github.com/mm2/Little-CMS/archive/lcms2.17.tar.gz -> mm2-Little-CMS-lcms2.17.tar.gz
+Successfully downloaded mm2-Little-CMS-lcms2.17.tar.gz
+-- Extracting source /home/repro/vcpkg/downloads/mm2-Little-CMS-lcms2.17.tar.gz
+-- Applying patch fix-shared-library.patch
+-- Using source at /home/repro/vcpkg/buildtrees/lcms/src/lcms2.17-b020fa9f7d.clean
+-- Configuring x64-linux-dynamic-dbg
+-- Getting CMake variables for x64-linux-dynamic
+-- Loading CMake variables from /home/repro/vcpkg/buildtrees/lcms/cmake-get-vars_C_CXX-x64-linux-dynamic.cmake.log
+-- Configuring x64-linux-dynamic-dbg done
+-- Configuring x64-linux-dynamic-rel
+-- Configuring x64-linux-dynamic-rel done
+-- Package x64-linux-dynamic-dbg
+-- Package x64-linux-dynamic-rel
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/lcms_x64-linux-dynamic/lib/pkgconfig/lcms2.pc
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/lcms_x64-linux-dynamic/debug/lib/pkgconfig/lcms2.pc
+-- Installing: /home/repro/vcpkg/packages/lcms_x64-linux-dynamic/share/lcms/lcms-config.cmake
+-- Installing: /home/repro/vcpkg/packages/lcms_x64-linux-dynamic/share/lcms2/lcms2-config.cmake
+-- Installing: /home/repro/vcpkg/packages/lcms_x64-linux-dynamic/share/lcms/usage
+-- Installing: /home/repro/vcpkg/packages/lcms_x64-linux-dynamic/share/lcms/copyright
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/lcms_x64-linux-dynamic/debug/lib/liblcms2.so.2.0.17' (From '' -> To '$ORIGIN')
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/lcms_x64-linux-dynamic/lib/liblcms2.so.2.0.17' (From '' -> To '$ORIGIN')
+-- Performing post-build validation
+Starting submission of lcms:x64-linux-dynamic@2.17 to 1 binary cache(s) in the background
+Elapsed time to handle lcms:x64-linux-dynamic: 11 s
+lcms:x64-linux-dynamic package ABI: db37c14d61c855ef080c350018538456e099c4d621ae8ce2d53ca4b2a4f6cf65
+Completed submission of vcpkg-tool-meson:x64-linux@1.8.2 to 1 binary cache(s) in 3.88 ms
+Installing 15/19 jasper:x64-linux-dynamic@4.2.4#2...
+Building jasper:x64-linux-dynamic@4.2.4#2...
+/home/repro/vcpkg/triplets/community/x64-linux-dynamic.cmake: info: loaded community triplet from here. Community triplets are not built in the curated registry and are thus less likely to succeed.
+Downloading https://github.com/jasper-software/jasper/archive/version-4.2.4.tar.gz -> jasper-software-jasper-version-4.2.4.tar.gz
+Successfully downloaded jasper-software-jasper-version-4.2.4.tar.gz
+-- Extracting source /home/repro/vcpkg/downloads/jasper-software-jasper-version-4.2.4.tar.gz
+-- Applying patch no_stdc_check.patch
+-- Applying patch fix-library-name.patch
+-- Using source at /home/repro/vcpkg/buildtrees/jasper/src/sion-4.2.4-ea4e92ed3f.clean
+-- Configuring x64-linux-dynamic
+-- Building x64-linux-dynamic-dbg
+-- Building x64-linux-dynamic-rel
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/jasper_x64-linux-dynamic/lib/pkgconfig/jasper.pc
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/jasper_x64-linux-dynamic/debug/lib/pkgconfig/jasper.pc
+-- Installing: /home/repro/vcpkg/packages/jasper_x64-linux-dynamic/share/jasper/copyright
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/jasper_x64-linux-dynamic/debug/lib/libjasperd.so.7.0.0' (From '/home/repro/vcpkg/packages/jasper_x64-linux-dynamic/debug/lib:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib' -> To '$ORIGIN')
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/jasper_x64-linux-dynamic/lib/libjasper.so.7.0.0' (From '/home/repro/vcpkg/packages/jasper_x64-linux-dynamic/lib:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib' -> To '$ORIGIN')
+-- Performing post-build validation
+Starting submission of jasper:x64-linux-dynamic@4.2.4#2 to 1 binary cache(s) in the background
+Elapsed time to handle jasper:x64-linux-dynamic: 7.8 s
+jasper:x64-linux-dynamic package ABI: a0069d76291675c0f4260db49c5bb68dad94ef47e74404e9b7ab55d84adaba35
+Completed submission of lcms:x64-linux-dynamic@2.17 to 1 binary cache(s) in 88.2 ms
+Installing 16/19 libraw:x64-linux-dynamic@0.21.4...
+Building libraw:x64-linux-dynamic@0.21.4...
+/home/repro/vcpkg/triplets/community/x64-linux-dynamic.cmake: info: loaded community triplet from here. Community triplets are not built in the curated registry and are thus less likely to succeed.
+Downloading https://github.com/LibRaw/LibRaw/archive/0.21.4.tar.gz -> LibRaw-LibRaw-0.21.4.tar.gz
+Successfully downloaded LibRaw-LibRaw-0.21.4.tar.gz
+-- Extracting source /home/repro/vcpkg/downloads/LibRaw-LibRaw-0.21.4.tar.gz
+-- Using source at /home/repro/vcpkg/buildtrees/libraw/src/0.21.4-a76ab75fc4.clean
+Downloading https://github.com/LibRaw/LibRaw-cmake/archive/eb98e4325aef2ce85d2eb031c2ff18640ca616d3.tar.gz -> LibRaw-LibRaw-cmake-eb98e4325aef2ce85d2eb031c2ff18640ca616d3.tar.gz
+Successfully downloaded LibRaw-LibRaw-cmake-eb98e4325aef2ce85d2eb031c2ff18640ca616d3.tar.gz
+-- Extracting source /home/repro/vcpkg/downloads/LibRaw-LibRaw-cmake-eb98e4325aef2ce85d2eb031c2ff18640ca616d3.tar.gz
+-- Applying patch dependencies.patch
+-- Applying patch fix-install.patch
+-- Using source at /home/repro/vcpkg/buildtrees/libraw/src/640ca616d3-f6ae978fdb.clean
+-- Configuring x64-linux-dynamic
+-- Building x64-linux-dynamic-dbg
+-- Building x64-linux-dynamic-rel
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/libraw_x64-linux-dynamic/lib/pkgconfig/libraw.pc
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/libraw_x64-linux-dynamic/lib/pkgconfig/libraw_r.pc
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/libraw_x64-linux-dynamic/debug/lib/pkgconfig/libraw.pc
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/libraw_x64-linux-dynamic/debug/lib/pkgconfig/libraw_r.pc
+-- Installing: /home/repro/vcpkg/packages/libraw_x64-linux-dynamic/share/libraw/usage
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/libraw_x64-linux-dynamic/debug/lib/libraw_r.so.23.0.0' (From '' -> To '$ORIGIN')
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/libraw_x64-linux-dynamic/debug/lib/manual-link/libraw.so.23.0.0' (From '' -> To '$ORIGIN:$ORIGIN/..')
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/libraw_x64-linux-dynamic/lib/libraw_r.so.23.0.0' (From '' -> To '$ORIGIN')
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/libraw_x64-linux-dynamic/lib/manual-link/libraw.so.23.0.0' (From '' -> To '$ORIGIN:$ORIGIN/..')
+-- Performing post-build validation
+Starting submission of libraw:x64-linux-dynamic@0.21.4 to 1 binary cache(s) in the background
+Elapsed time to handle libraw:x64-linux-dynamic: 1.1 min
+libraw:x64-linux-dynamic package ABI: ebef530d917a7ea6db01f0ccd983ccecf4165c0af779f6b5f1b4ca511b391a01
+Completed submission of jasper:x64-linux-dynamic@4.2.4#2 to 1 binary cache(s) in 84.5 ms
+Installing 17/19 libpng:x64-linux-dynamic@1.6.48...
+Building libpng:x64-linux-dynamic@1.6.48...
+/home/repro/vcpkg/triplets/community/x64-linux-dynamic.cmake: info: loaded community triplet from here. Community triplets are not built in the curated registry and are thus less likely to succeed.
+Downloading https://github.com/pnggroup/libpng/archive/v1.6.48.tar.gz -> pnggroup-libpng-v1.6.48.tar.gz
+Successfully downloaded pnggroup-libpng-v1.6.48.tar.gz
+-- Extracting source /home/repro/vcpkg/downloads/pnggroup-libpng-v1.6.48.tar.gz
+-- Applying patch cmake.patch
+-- Using source at /home/repro/vcpkg/buildtrees/libpng/src/v1.6.48-73784f7c8e.clean
+-- Configuring x64-linux-dynamic
+-- Building x64-linux-dynamic-dbg
+-- Building x64-linux-dynamic-rel
+-- Installing: /home/repro/vcpkg/packages/libpng_x64-linux-dynamic/share/png/vcpkg-cmake-wrapper.cmake
+-- Installing: /home/repro/vcpkg/packages/libpng_x64-linux-dynamic/share/libpng/libpng-config.cmake
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/libpng_x64-linux-dynamic/lib/pkgconfig/libpng16.pc
+-- Fixing pkgconfig file: /home/repro/vcpkg/packages/libpng_x64-linux-dynamic/debug/lib/pkgconfig/libpng16.pc
+-- Installing: /home/repro/vcpkg/packages/libpng_x64-linux-dynamic/debug/lib/pkgconfig/libpng.pc
+-- Installing: /home/repro/vcpkg/packages/libpng_x64-linux-dynamic/lib/pkgconfig/libpng.pc
+-- Installing: /home/repro/vcpkg/packages/libpng_x64-linux-dynamic/share/libpng/usage
+-- Installing: /home/repro/vcpkg/packages/libpng_x64-linux-dynamic/share/libpng/copyright
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/libpng_x64-linux-dynamic/debug/lib/libpng16d.so.16.48.0' (From '' -> To '$ORIGIN')
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/libpng_x64-linux-dynamic/lib/libpng16.so.16.48.0' (From '' -> To '$ORIGIN')
+-- Performing post-build validation
+Starting submission of libpng:x64-linux-dynamic@1.6.48 to 1 binary cache(s) in the background
+Elapsed time to handle libpng:x64-linux-dynamic: 4.4 s
+libpng:x64-linux-dynamic package ABI: 82d4721a3fa52ea89e2aae577bcff5048df9d4840005f0ccda0d1b73a8576198
+Completed submission of libraw:x64-linux-dynamic@0.21.4 to 1 binary cache(s) in 469 ms
+Installing 18/19 jxrlib:x64-linux-dynamic@2019.10.9#7...
+Building jxrlib:x64-linux-dynamic@2019.10.9#7...
+/home/repro/vcpkg/triplets/community/x64-linux-dynamic.cmake: info: loaded community triplet from here. Community triplets are not built in the curated registry and are thus less likely to succeed.
+-- Note: jxrlib only supports static library linkage. Building static library.
+Downloading https://github.com/4creators/jxrlib/archive/f7521879862b9085318e814c6157490dd9dbbdb4.tar.gz -> 4creators-jxrlib-f7521879862b9085318e814c6157490dd9dbbdb4.tar.gz
+Successfully downloaded 4creators-jxrlib-f7521879862b9085318e814c6157490dd9dbbdb4.tar.gz
+-- Extracting source /home/repro/vcpkg/downloads/4creators-jxrlib-f7521879862b9085318e814c6157490dd9dbbdb4.tar.gz
+-- Applying patch guiddef.patch
+-- Applying patch fix-mingw.patch
+-- Using source at /home/repro/vcpkg/buildtrees/jxrlib/src/0dd9dbbdb4-ff67a15ca3.clean
+-- Configuring x64-linux-dynamic
+-- Building x64-linux-dynamic-dbg
+-- Building x64-linux-dynamic-rel
+-- Installing: /home/repro/vcpkg/packages/jxrlib_x64-linux-dynamic/share/jxr/FindJXR.cmake
+-- Installing: /home/repro/vcpkg/packages/jxrlib_x64-linux-dynamic/share/jxr/vcpkg-cmake-wrapper.cmake
+-- Installing: /home/repro/vcpkg/packages/jxrlib_x64-linux-dynamic/share/jxrlib/usage
+-- Installing: /home/repro/vcpkg/packages/jxrlib_x64-linux-dynamic/share/jxrlib/copyright
+-- Performing post-build validation
+Starting submission of jxrlib:x64-linux-dynamic@2019.10.9#7 to 1 binary cache(s) in the background
+Elapsed time to handle jxrlib:x64-linux-dynamic: 5.2 s
+jxrlib:x64-linux-dynamic package ABI: 0566adef7fb976247748f0de6728b5703ca5e615e19ac3bb4ef3be22b42b349d
+Completed submission of libpng:x64-linux-dynamic@1.6.48 to 1 binary cache(s) in 62.8 ms
+Installing 19/19 freeimage:x64-linux-dynamic@3.18.0#27...
+Building freeimage:x64-linux-dynamic@3.18.0#27...
+/home/repro/vcpkg/triplets/community/x64-linux-dynamic.cmake: info: loaded community triplet from here. Community triplets are not built in the curated registry and are thus less likely to succeed.
+Downloading FreeImage3180.zip, trying https://sourceforge.net/projects/freeimage/files/Source%20Distribution/3.18.0/FreeImage3180.zip/download
+Successfully downloaded FreeImage3180.zip
+-- Extracting source /home/repro/vcpkg/downloads/FreeImage3180.zip
+-- Applying patch disable-plugins-depending-on-internal-third-party-libraries.patch
+-- Applying patch use-external-jpeg.patch
+-- Applying patch use-external-jxrlib.patch
+-- Applying patch use-external-libtiff.patch
+-- Applying patch use-external-openjpeg.patch
+-- Applying patch use-external-png-zlib.patch
+-- Applying patch use-external-rawlib.patch
+-- Applying patch use-external-webp.patch
+-- Applying patch use-external-openexr.patch
+-- Applying patch use-freeimage-config-include.patch
+-- Applying patch fix-function-overload.patch
+-- Applying patch use-typedef-as-already-declared.patch
+-- Applying patch use-functions-to-override-libtiff-warning-error-handlers.patch
+-- Applying patch remove_auto_ptr.patch
+-- Applying patch rawlib-build-fix.patch
+-- Applying patch typedef-xcode.patch
+-- Using source at /home/repro/vcpkg/buildtrees/freeimage/src/eImage3180-8291f48120.clean
+-- Configuring x64-linux-dynamic
+-- Building x64-linux-dynamic-dbg
+-- Building x64-linux-dynamic-rel
+-- Installing: /home/repro/vcpkg/packages/freeimage_x64-linux-dynamic/share/freeimage/copyright
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/freeimage_x64-linux-dynamic/debug/lib/libFreeImagePlusd.so' (From '' -> To '$ORIGIN')
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/freeimage_x64-linux-dynamic/debug/lib/libFreeImaged.so' (From '' -> To '$ORIGIN')
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/freeimage_x64-linux-dynamic/lib/libFreeImage.so' (From '' -> To '$ORIGIN')
+-- Adjusted RPATH of '/home/repro/vcpkg/packages/freeimage_x64-linux-dynamic/lib/libFreeImagePlus.so' (From '' -> To '$ORIGIN')
+-- Performing post-build validation
+Starting submission of freeimage:x64-linux-dynamic@3.18.0#27 to 1 binary cache(s) in the background
+Elapsed time to handle freeimage:x64-linux-dynamic: 42 s
+freeimage:x64-linux-dynamic package ABI: fa095101a03aa372ee94daef03dedb5f01cfa4cbd427cfe0f252f98516edb6a1
+Installed contents are licensed to you by owners. Microsoft is not responsible for, nor does it grant any licenses to, third-party packages.
+Some packages did not declare an SPDX license. Check the `copyright` file for each package for more information about their licensing.
+Packages installed in this vcpkg installation declare the following licenses:
+(GPL-2.0-only OR GPL-3.0-only OR FreeImage)
+(LGPL-2.1-only OR CDDL-1.0)
+Apache-2.0
+BSD-2-Clause
+BSD-3-Clause
+MIT
+Zlib
+libpng-2.0
+libtiff
+freeimage provides CMake targets:
+
+  # this is heuristically generated, and may not be correct
+  find_package(freeimage CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE freeimage::FreeImage freeimage::FreeImagePlus)
+
+Completed submission of jxrlib:x64-linux-dynamic@2019.10.9#7 to 1 binary cache(s) in 100 ms
+Waiting for 1 remaining binary cache submissions...
+Completed submission of freeimage:x64-linux-dynamic@3.18.0#27 to 1 binary cache(s) in 367 ms (1/1)
+All requested installations completed successfully in: 4.9 min
+-- Running vcpkg install - done
+-- The CXX compiler identification is GNU 12.2.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ZLIB: /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/libz.so (found version "1.3.1") 
+-- Found PNG: /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/libpng16.so (found version "1.6.48") 
+-- Found JPEG: /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/libjpeg.so (found version "62") 
+-- Found TIFF: /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/libtiff.so (found version "4.7.0")  
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found JXR: /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/include/jxrlib  
+-- Found PkgConfig: /usr/bin/pkg-config (found version "1.8.1") 
+-- Checking for module 'libraw'
+--   Found libraw, version 0.21.4
+-- Checking for module 'libraw_r'
+--   Found libraw_r, version 0.21.4
+-- Found LibRaw: /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/libraw.so (found version "0.21.4") 
+-- Configuring done
+CMake Warning at /home/repro/vcpkg/scripts/buildsystems/vcpkg.cmake:600 (_add_executable):
+  Cannot generate a safe runtime search path for target freeimage-test
+  because there is a cycle in the constraint graph:
+
+    dir 0 is [/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib]
+      dir 1 must precede it due to runtime library [libz.so.1]
+    dir 1 is [/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib]
+      dir 0 must precede it due to runtime library [libopenjp2.so.7]
+    dir 2 is [/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link]
+
+  Some of these libraries may not be found correctly.
+Call Stack (most recent call first):
+  CMakeLists.txt:7 (add_executable)
+
+
+-- Generating done
+-- Build files have been written to: /home/repro/code/freeimage-test/build
+
+repro@vm:~/code/freeimage-test$ cd build/
+
+repro@vm:~/code/freeimage-test/build$ cmake --build .
+
+[ 50%] Building CXX object CMakeFiles/freeimage-test.dir/main.cpp.o
+[100%] Linking CXX executable freeimage-test
+[100%] Built target freeimage-test
+
+repro@vm:~/code/freeimage-test/build$ ./freeimage-test
+
+./freeimage-test: error while loading shared libraries: libraw.so.23: cannot open shared object file: No such file or directory
+
+repro@vm:~/code/freeimage-test/build$ find . -name libraw.so.23
+
+./vcpkg_installed/x64-linux-dynamic/debug/lib/manual-link/libraw.so.23
+./vcpkg_installed/x64-linux-dynamic/lib/manual-link/libraw.so.23
+
+repro@vm:~/code/freeimage-test/build$ objdump -p freeimage-test | grep -E 'R.*PATH|SONAME|NEEDED'
+
+  NEEDED               libFreeImaged.so
+  NEEDED               libtiff.so.6
+  NEEDED               libpng16.so.16
+  NEEDED               libc.so.6
+  RUNPATH              /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link
+
+repro@vm:~/code/freeimage-test/build$ objdump -p /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libFreeImaged.so | grep -E 'R.*PATH|SONAME|NEEDED'
+
+  RUNPATH              $ORIGIN
+  NEEDED               libz.so.1
+  NEEDED               libjpeg.so.62
+  NEEDED               libtiffd.so.6
+  NEEDED               libpng16d.so.16
+  NEEDED               libopenjp2.so.7
+  NEEDED               libwebpmux.so.3
+  NEEDED               libwebpdecoder.so.3
+  NEEDED               libraw.so.23
+  NEEDED               libOpenEXR-3_3_d.so.32
+  NEEDED               libwebp.so.7
+  NEEDED               libIex-3_3_d.so.32
+  NEEDED               libImath-3_1_d.so.29
+  NEEDED               libstdc++.so.6
+  NEEDED               libm.so.6
+  NEEDED               libgcc_s.so.1
+  NEEDED               libc.so.6
+  SONAME               libFreeImaged.so
+
+repro@vm:~/code/freeimage-test/build$ objdump -p /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/libraw.so.23 | grep -E 'R.*PATH|SONAME|NEEDED'
+
+  RUNPATH              $ORIGIN:$ORIGIN/..
+  NEEDED               liblcms2.so.2
+  NEEDED               libz.so.1
+  NEEDED               libstdc++.so.6
+  NEEDED               libm.so.6
+  NEEDED               libgcc_s.so.1
+  NEEDED               libc.so.6
+  SONAME               libraw.so.23
+
+repro@vm:~/code/freeimage-test/build$ ldd freeimage-test
+
+	linux-vdso.so.1 (0x00007ffd76db7000)
+	libFreeImaged.so => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libFreeImaged.so (0x00007f77eee00000)
+	libtiff.so.6 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/libtiff.so.6 (0x00007f77ef164000)
+	libpng16.so.16 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/libpng16.so.16 (0x00007f77ef11e000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f77eec1f000)
+	libz.so.1 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libz.so.1 (0x00007f77ef0e2000)
+	libjpeg.so.62 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libjpeg.so.62 (0x00007f77eeb37000)
+	libtiffd.so.6 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libtiffd.so.6 (0x00007f77ef036000)
+	libpng16d.so.16 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libpng16d.so.16 (0x00007f77eeaf0000)
+	libopenjp2.so.7 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libopenjp2.so.7 (0x00007f77eea60000)
+	libwebpmux.so.3 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libwebpmux.so.3 (0x00007f77eea4e000)
+	libwebpdecoder.so.3 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libwebpdecoder.so.3 (0x00007f77ee9d9000)
+	libraw.so.23 => not found
+	libOpenEXR-3_3_d.so.32 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libOpenEXR-3_3_d.so.32 (0x00007f77ee83e000)
+	libwebp.so.7 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libwebp.so.7 (0x00007f77ee76d000)
+	libIex-3_3_d.so.32 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libIex-3_3_d.so.32 (0x00007f77ee6e2000)
+	libImath-3_1_d.so.29 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libImath-3_1_d.so.29 (0x00007f77ee688000)
+	libstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007f77ee400000)
+	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007f77ee320000)
+	libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007f77ee668000)
+	liblzma.so.5 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/liblzma.so.5 (0x00007f77ee636000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007f77ef201000)
+	libIlmThread-3_3_d.so.32 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libIlmThread-3_3_d.so.32 (0x00007f77ee624000)
+	libOpenEXRCore-3_3_d.so.32 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libOpenEXRCore-3_3_d.so.32 (0x00007f77ee236000)
+	libsharpyuv.so.0 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libsharpyuv.so.0 (0x00007f77ee22a000)
+	libdeflate.so.0 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libdeflate.so.0 (0x00007f77ee1f3000)
+
+repro@vm:~/code/freeimage-test/build$ lddtree freeimage-test
+
+freeimage-test (interpreter => /lib64/ld-linux-x86-64.so.2)
+    libFreeImaged.so => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libFreeImaged.so
+        libz.so.1 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libz.so.1
+        libjpeg.so.62 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libjpeg.so.62
+        libtiffd.so.6 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libtiffd.so.6
+            liblzma.so.5 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/liblzma.so.5
+        libpng16d.so.16 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libpng16d.so.16
+        libopenjp2.so.7 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libopenjp2.so.7
+        libwebpmux.so.3 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libwebpmux.so.3
+        libwebpdecoder.so.3 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libwebpdecoder.so.3
+        libraw.so.23 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/libraw.so.23
+            liblcms2.so.2 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/liblcms2.so.2
+        libOpenEXR-3_3_d.so.32 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libOpenEXR-3_3_d.so.32
+            libIlmThread-3_3_d.so.32 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libIlmThread-3_3_d.so.32
+            libOpenEXRCore-3_3_d.so.32 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libOpenEXRCore-3_3_d.so.32
+                libdeflate.so.0 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libdeflate.so.0
+        libwebp.so.7 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libwebp.so.7
+            libsharpyuv.so.0 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libsharpyuv.so.0
+        libIex-3_3_d.so.32 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libIex-3_3_d.so.32
+        libImath-3_1_d.so.29 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libImath-3_1_d.so.29
+        libstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6
+        libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6
+        libgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1
+    libtiff.so.6 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/libtiff.so.6
+    libpng16.so.16 => /home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/libpng16.so.16
+    libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6
+
+repro@vm:~/code/freeimage-test/build$ LD_DEBUG=libs ./freeimage-test
+
+     74275:	find library=libFreeImaged.so [0]; searching
+     74275:	 search path=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/glibc-hwcaps/x86-64-v2:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/tls/x86_64/x86_64:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/tls/x86_64:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/tls/x86_64:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/tls:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/x86_64/x86_64:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/x86_64:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/x86_64:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/glibc-hwcaps/x86-64-v2:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/tls/x86_64/x86_64:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/tls/x86_64:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/tls/x86_64:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/tls:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/x86_64/x86_64:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/x86_64:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/x86_64:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/glibc-hwcaps/x86-64-v2:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/tls/x86_64/x86_64:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/tls/x86_64:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/tls/x86_64:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/tls:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/x86_64/x86_64:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/x86_64:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/x86_64:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link		(RUNPATH from file ./freeimage-test)
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/glibc-hwcaps/x86-64-v2/libFreeImaged.so
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/tls/x86_64/x86_64/libFreeImaged.so
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/tls/x86_64/libFreeImaged.so
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/tls/x86_64/libFreeImaged.so
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/tls/libFreeImaged.so
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/x86_64/x86_64/libFreeImaged.so
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/x86_64/libFreeImaged.so
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/x86_64/libFreeImaged.so
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/libFreeImaged.so
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/glibc-hwcaps/x86-64-v2/libFreeImaged.so
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/tls/x86_64/x86_64/libFreeImaged.so
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/tls/x86_64/libFreeImaged.so
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/tls/x86_64/libFreeImaged.so
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/tls/libFreeImaged.so
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/x86_64/x86_64/libFreeImaged.so
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/x86_64/libFreeImaged.so
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/x86_64/libFreeImaged.so
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libFreeImaged.so
+     74275:	
+     74275:	find library=libtiff.so.6 [0]; searching
+     74275:	 search path=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/glibc-hwcaps/x86-64-v2:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/tls/x86_64/x86_64:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/tls/x86_64:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/tls/x86_64:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/tls:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/x86_64/x86_64:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/x86_64:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/x86_64:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link		(RUNPATH from file ./freeimage-test)
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/libtiff.so.6
+     74275:	
+     74275:	find library=libpng16.so.16 [0]; searching
+     74275:	 search path=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/glibc-hwcaps/x86-64-v2:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/tls/x86_64/x86_64:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/tls/x86_64:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/tls/x86_64:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/tls:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/x86_64/x86_64:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/x86_64:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/x86_64:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link		(RUNPATH from file ./freeimage-test)
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/libpng16.so.16
+     74275:	
+     74275:	find library=libc.so.6 [0]; searching
+     74275:	 search path=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/glibc-hwcaps/x86-64-v2:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/tls/x86_64/x86_64:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/tls/x86_64:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/tls/x86_64:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/tls:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/x86_64/x86_64:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/x86_64:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/x86_64:/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link		(RUNPATH from file ./freeimage-test)
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/libc.so.6
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libc.so.6
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/glibc-hwcaps/x86-64-v2/libc.so.6
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/tls/x86_64/x86_64/libc.so.6
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/tls/x86_64/libc.so.6
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/tls/x86_64/libc.so.6
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/tls/libc.so.6
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/x86_64/x86_64/libc.so.6
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/x86_64/libc.so.6
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/x86_64/libc.so.6
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/lib/manual-link/libc.so.6
+     74275:	 search cache=/etc/ld.so.cache
+     74275:	  trying file=/lib/x86_64-linux-gnu/libc.so.6
+     74275:	
+     74275:	find library=libz.so.1 [0]; searching
+     74275:	 search path=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib		(RUNPATH from file ./freeimage-test)
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libz.so.1
+     74275:	
+     74275:	find library=libjpeg.so.62 [0]; searching
+     74275:	 search path=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib		(RUNPATH from file ./freeimage-test)
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libjpeg.so.62
+     74275:	
+     74275:	find library=libtiffd.so.6 [0]; searching
+     74275:	 search path=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib		(RUNPATH from file ./freeimage-test)
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libtiffd.so.6
+     74275:	
+     74275:	find library=libpng16d.so.16 [0]; searching
+     74275:	 search path=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib		(RUNPATH from file ./freeimage-test)
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libpng16d.so.16
+     74275:	
+     74275:	find library=libopenjp2.so.7 [0]; searching
+     74275:	 search path=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib		(RUNPATH from file ./freeimage-test)
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libopenjp2.so.7
+     74275:	
+     74275:	find library=libwebpmux.so.3 [0]; searching
+     74275:	 search path=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib		(RUNPATH from file ./freeimage-test)
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libwebpmux.so.3
+     74275:	
+     74275:	find library=libwebpdecoder.so.3 [0]; searching
+     74275:	 search path=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib		(RUNPATH from file ./freeimage-test)
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libwebpdecoder.so.3
+     74275:	
+     74275:	find library=libraw.so.23 [0]; searching
+     74275:	 search path=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib		(RUNPATH from file ./freeimage-test)
+     74275:	  trying file=/home/repro/code/freeimage-test/build/vcpkg_installed/x64-linux-dynamic/debug/lib/libraw.so.23
+     74275:	 search cache=/etc/ld.so.cache
+     74275:	 search path=/lib/x86_64-linux-gnu/glibc-hwcaps/x86-64-v2:/lib/x86_64-linux-gnu/tls/x86_64/x86_64:/lib/x86_64-linux-gnu/tls/x86_64:/lib/x86_64-linux-gnu/tls/x86_64:/lib/x86_64-linux-gnu/tls:/lib/x86_64-linux-gnu/x86_64/x86_64:/lib/x86_64-linux-gnu/x86_64:/lib/x86_64-linux-gnu/x86_64:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu/glibc-hwcaps/x86-64-v2:/usr/lib/x86_64-linux-gnu/tls/x86_64/x86_64:/usr/lib/x86_64-linux-gnu/tls/x86_64:/usr/lib/x86_64-linux-gnu/tls/x86_64:/usr/lib/x86_64-linux-gnu/tls:/usr/lib/x86_64-linux-gnu/x86_64/x86_64:/usr/lib/x86_64-linux-gnu/x86_64:/usr/lib/x86_64-linux-gnu/x86_64:/usr/lib/x86_64-linux-gnu:/lib/glibc-hwcaps/x86-64-v2:/lib/tls/x86_64/x86_64:/lib/tls/x86_64:/lib/tls/x86_64:/lib/tls:/lib/x86_64/x86_64:/lib/x86_64:/lib/x86_64:/lib:/usr/lib/glibc-hwcaps/x86-64-v2:/usr/lib/tls/x86_64/x86_64:/usr/lib/tls/x86_64:/usr/lib/tls/x86_64:/usr/lib/tls:/usr/lib/x86_64/x86_64:/usr/lib/x86_64:/usr/lib/x86_64:/usr/lib		(system search path)
+     74275:	  trying file=/lib/x86_64-linux-gnu/glibc-hwcaps/x86-64-v2/libraw.so.23
+     74275:	  trying file=/lib/x86_64-linux-gnu/tls/x86_64/x86_64/libraw.so.23
+     74275:	  trying file=/lib/x86_64-linux-gnu/tls/x86_64/libraw.so.23
+     74275:	  trying file=/lib/x86_64-linux-gnu/tls/x86_64/libraw.so.23
+     74275:	  trying file=/lib/x86_64-linux-gnu/tls/libraw.so.23
+     74275:	  trying file=/lib/x86_64-linux-gnu/x86_64/x86_64/libraw.so.23
+     74275:	  trying file=/lib/x86_64-linux-gnu/x86_64/libraw.so.23
+     74275:	  trying file=/lib/x86_64-linux-gnu/x86_64/libraw.so.23
+     74275:	  trying file=/lib/x86_64-linux-gnu/libraw.so.23
+     74275:	  trying file=/usr/lib/x86_64-linux-gnu/glibc-hwcaps/x86-64-v2/libraw.so.23
+     74275:	  trying file=/usr/lib/x86_64-linux-gnu/tls/x86_64/x86_64/libraw.so.23
+     74275:	  trying file=/usr/lib/x86_64-linux-gnu/tls/x86_64/libraw.so.23
+     74275:	  trying file=/usr/lib/x86_64-linux-gnu/tls/x86_64/libraw.so.23
+     74275:	  trying file=/usr/lib/x86_64-linux-gnu/tls/libraw.so.23
+     74275:	  trying file=/usr/lib/x86_64-linux-gnu/x86_64/x86_64/libraw.so.23
+     74275:	  trying file=/usr/lib/x86_64-linux-gnu/x86_64/libraw.so.23
+     74275:	  trying file=/usr/lib/x86_64-linux-gnu/x86_64/libraw.so.23
+     74275:	  trying file=/usr/lib/x86_64-linux-gnu/libraw.so.23
+     74275:	  trying file=/lib/glibc-hwcaps/x86-64-v2/libraw.so.23
+     74275:	  trying file=/lib/tls/x86_64/x86_64/libraw.so.23
+     74275:	  trying file=/lib/tls/x86_64/libraw.so.23
+     74275:	  trying file=/lib/tls/x86_64/libraw.so.23
+     74275:	  trying file=/lib/tls/libraw.so.23
+     74275:	  trying file=/lib/x86_64/x86_64/libraw.so.23
+     74275:	  trying file=/lib/x86_64/libraw.so.23
+     74275:	  trying file=/lib/x86_64/libraw.so.23
+     74275:	  trying file=/lib/libraw.so.23
+     74275:	  trying file=/usr/lib/glibc-hwcaps/x86-64-v2/libraw.so.23
+     74275:	  trying file=/usr/lib/tls/x86_64/x86_64/libraw.so.23
+     74275:	  trying file=/usr/lib/tls/x86_64/libraw.so.23
+     74275:	  trying file=/usr/lib/tls/x86_64/libraw.so.23
+     74275:	  trying file=/usr/lib/tls/libraw.so.23
+     74275:	  trying file=/usr/lib/x86_64/x86_64/libraw.so.23
+     74275:	  trying file=/usr/lib/x86_64/libraw.so.23
+     74275:	  trying file=/usr/lib/x86_64/libraw.so.23
+     74275:	  trying file=/usr/lib/libraw.so.23
+     74275:	
+./freeimage-test: error while loading shared libraries: libraw.so.23: cannot open shared object file: No such file or directory
+
+repro@vm:~/code/freeimage-test/build$ LD_LIBRARY_PATH=vcpkg_installed/x64-linux-dynamic/debug/lib/manual-link ./freeimage-test
+
+repro@vm:~/code/freeimage-test/build$ uname -a
+
+Linux vm 6.1.0-37-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.140-1 (2025-05-22) x86_64 GNU/Linux
+
+repro@vm:~/code/freeimage-test/build$ exit
+
+Script done on 2025-08-12 10:25:55-04:00 [COMMAND_EXIT_CODE="0"]
