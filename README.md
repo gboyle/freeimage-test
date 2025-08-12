@@ -4,6 +4,8 @@ Issue reproduction for using FreeImage via vcpkg with dynamic linking on Linux.
 
 ## Using FreeImage via vcpkg with dynamic linking on Linux fails to load libraw.so.23.
 
+[FreeImage with dynamic linking on Linux fails to load libraw.so.23. #46889](https://github.com/microsoft/vcpkg/issues/46889)
+
 ### Describe the bug
 Trying to build and use *FreeImage* as a shared object in a C++ project under Linux. The build completes, but the resulting executable is unable to run as it fails to load *libraw.so.23*, which is present.
 
